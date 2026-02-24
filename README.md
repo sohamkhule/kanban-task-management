@@ -1,72 +1,73 @@
-# Kanban Task Management System - Coding Assessment
+# Kanban Task Management System
 
-Welcome! This repository is part of a technical assessment for candidates interviewing at **DataFortune**.
+A full-stack Kanban board application built with React, Node.js, Express, SQLite, and Socket.io.
 
----
+## Prerequisites
 
-## Instructions
+- **Node.js** >= 18.x
+- **npm** >= 9.x
 
-1. **Clone** this repository to your local machine.
+## Quick Start
+
+### 1. Install Backend Dependencies
+
 ```bash
-   git clone https://github.com/arun-datafortune/kanban-task-management-system.git
+cd backend
+npm install
 ```
 
-2. **Create a new branch** using your full name in lowercase with hyphens (no spaces).
+### 2. Install Frontend Dependencies
+
 ```bash
-   git checkout -b your-name
-```
-   Example:
-```bash
-   git checkout -b john-doe
+cd frontend
+npm install
 ```
 
-3. **Build your solution** inside your branch. Do not modify the `main` branch.
+### 3. Start the Backend Server
 
-4. **Commit your changes** regularly as you progress. Do not push a single commit at the end.
 ```bash
-   git add .
-   git commit -m "your commit message"
+cd backend
+npm start
 ```
 
-5. **Push your branch** to this repository when done.
+Backend runs on **http://localhost:3001**
+
+### 4. Start the Frontend Dev Server
+
 ```bash
-   git push origin your-name
+cd frontend
+npm run dev
 ```
 
-6. Make sure your branch is pushed **before the time limit ends**. Late submissions will not be evaluated.
+Frontend runs on **http://localhost:5173**
 
----
+## Login Credentials
 
-## Task Details
+| Email | Password |
+|---|---|
+| admin@kanban.com | admin123 |
+| soham@kanban.com | soham123 |
+| john@kanban.com | john123 |
+| jane@kanban.com | jane123 |
+| mike@kanban.com | mike123 |
 
-Please refer to the task document shared with you separately for the full list of requirements, seed data, and evaluation criteria.
+## Features
 
----
+- ✅ **Authentication** — Login with hardcoded credentials, JWT session persistence
+- ✅ **Kanban Board** — 4 fixed columns (To Do, In Progress, In Review, Done)
+- ✅ **Task CRUD** — Create, Edit, Delete tasks with Priority (High/Medium/Low) and Assignee
+- ✅ **Drag & Drop** — Move task cards across columns, persists after page refresh
+- ✅ **Real-time Search** — Filter tasks by title, description, assignee, or priority
+- ✅ **WebSocket Sync** — Changes sync in real-time across browser tabs
+- ✅ **Custom Columns** — Create and delete additional columns beyond the 4 defaults
 
-## Submission Checklist
+## Tech Stack
 
-Before pushing, make sure:
-
-- [ ] Your code runs without errors
-- [ ] Login works with the provided credentials
-- [ ] Kanban board displays tasks across all 4 columns
-- [ ] Drag and drop works and persists after refresh
-- [ ] Search filters task cards in real time
-- [ ] A `README.md` inside your branch explains how to run your project locally
-
----
-
-## How to Run (Candidate's Responsibility)
-
-Inside your branch, include a `README.md` with clear steps on how to run your project locally, including:
-
-- Prerequisites (Node.js version, Python version, etc.)
-- How to install dependencies
-- How to start the frontend and backend
-- Any environment variables needed (use a `.env.example` file)
-
----
-
-## Contact
-
-If you face any issues accessing the repository, please reach out to your interviewer directly.
+| Layer | Technology |
+|---|---|
+| Frontend | React 18 + Vite |
+| Drag & Drop | @dnd-kit/core |
+| Backend | Node.js + Express |
+| Database | SQLite (better-sqlite3) |
+| Real-time | Socket.io |
+| Auth | JWT + localStorage |

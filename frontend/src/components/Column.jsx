@@ -39,6 +39,7 @@ function Column({ column, tasks, color, onAddTask, onEditTask, onDeleteTask, onD
                                 task={task}
                                 onEdit={() => onEditTask(task)}
                                 onDelete={() => onDeleteTask(task.id)}
+                                isDone={column.title.toLowerCase() === 'done'}
                             />
                         ))
                 )}

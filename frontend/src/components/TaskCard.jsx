@@ -1,6 +1,6 @@
 import { useDraggable } from '@dnd-kit/core';
 
-function TaskCard({ task, onEdit, onDelete, isDragOverlay }) {
+function TaskCard({ task, onEdit, onDelete, isDragOverlay, isDone }) {
     const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
         id: task.id,
         disabled: isDragOverlay,
@@ -30,7 +30,7 @@ function TaskCard({ task, onEdit, onDelete, isDragOverlay }) {
                 <span className="task-title">{task.title}</span>
                 {!isDragOverlay && (
                     <div className="task-card-actions">
-                        <button className="btn-icon" onClick={onEdit} title="Edit task">✏️</button>
+                        {!isDone && <button className="btn-icon" onClick={onEdit} title="Edit task">✏️</button>}
                         <button className="btn-icon" onClick={onDelete} title="Delete task">🗑️</button>
                     </div>
                 )}
